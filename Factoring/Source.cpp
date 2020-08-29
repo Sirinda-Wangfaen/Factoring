@@ -6,17 +6,26 @@ int main() {
 	printf("Enter number : ");
 	scanf_s("%d", &x);
 	printf("Factoring Result : ");
-	while ((x > 1) && (y < x)) {
-		if (x % y == 0) {
-			printf("%d x ", y);
-			x = x / y;
-			y = 2;
-		}
-		else {
-			y = y + 1;
-		}
+	if (x == -1 || x == 0 || x == 1) {
+		printf("%d", x);
 	}
-	printf("%d\n", y);
+	else {
+		if (x < -1) {
+			x = -x;
+			printf("(-1) x ");
+		}
+		while ((x > 1) && (y < x)) {
+			if (x % y == 0) {
+				printf("%d x ", y);
+				x = x / y;
+				y = 2;
+			}
+			else {
+				y = y + 1;
+			}
+		}
+		printf("%d\n", y);
+	}
 	return 0;
 }
 
